@@ -20,7 +20,7 @@ specifiers:
   '@types/react-dom': 18.0.10
   '@typescript-eslint/eslint-plugin': ^5.50.0
   '@typescript-eslint/parser': ^5.50.0
-  axios: ^1.3.1
+  axios: ^1.3.2
   commitizen: ^4.3.0
   date-fns: ^2.29.3
   eslint: 8.33.0
@@ -54,7 +54,7 @@ dependencies:
   '@twind/preset-tailwind': 1.1.4_3zgnruiul6lsk2vdq6ajg5kdh4
   '@twind/preset-tailwind-forms': 1.1.2_kafzkapdr3kluphwvxzrrhnmh4
   '@twind/with-next': 1.2.2_27mpfqrm7onjjywknw3zqf2eqq
-  axios: 1.3.1
+  axios: 1.3.2
   date-fns: 2.29.3
   html-react-parser: 3.0.8_react@18.2.0
   next: 13.1.6_biqbaboplfbrettd7655fr4n2y
@@ -1265,8 +1265,8 @@ packages:
     engines: {node: '>=4'}
     dev: true
 
-  /axios/1.3.1:
-    resolution: {integrity: sha512-78pWJsQTceInlyaeBQeYZ/QgZeWS8hGeKiIJiDKQe3hEyBb7sEMq0K4gjx+Va6WHTYO4zI/RRl8qGRzn0YMadA==}
+  /axios/1.3.2:
+    resolution: {integrity: sha512-1M3O703bYqYuPhbHeya5bnhpYVsDDRyQSabNja04mZtboLNSuZ4YrltestrLXfHgmzua4TpUqRiVKbiQuo2epw==}
     dependencies:
       follow-redirects: 1.15.2
       form-data: 4.0.0

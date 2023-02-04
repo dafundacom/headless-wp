@@ -14,6 +14,21 @@ export default defineConfig({
       xl: "1280px",
       "2xl": "1536px",
     },
+    fontFamily: {
+      sans: [
+        "-apple-system",
+        "BlinkMacSystemFont",
+        "segoe ui",
+        "helvetica neue",
+        "Arial",
+        "noto sans",
+        "sans-serif",
+        "apple color emoji",
+        "segoe ui emoji",
+        "segoe ui symbol",
+        "noto color emoji",
+      ],
+    },
     extend: {
       colors: {
         primary: {
@@ -34,16 +49,25 @@ export default defineConfig({
   preflight: (preflight: any) => css`
     ${preflight}
 
-    body {
+    html {
       font-family: -apple-system, BlinkMacSystemFont, segoe ui, helvetica neue,
         Arial, noto sans, sans-serif, apple color emoji, segoe ui emoji,
         segoe ui symbol, noto color emoji !important;
     }
 
+    .scrollbar {
+      scroll-behavior: smooth;
+    }
+
     .scrollbar::-webkit-scrollbar {
       width: 3px;
     }
-
+    .scrollbarhide.scrollbar::-webkit-scrollbar-thumb {
+      background: transparent;
+    }
+    .scrollbarhide.scrollbar::-webkit-scrollbar-thumb:hover {
+      background: transparent;
+    }
     .scrollbar::-webkit-scrollbar-track {
       background: transparent;
     }
@@ -57,7 +81,7 @@ export default defineConfig({
     }
 
     .scrollbar::-webkit-scrollbar-track:hover {
-      background: #f1f1f1;
+      background: transparent;
     }
     .post-card-thumbnail:hover img {
       @apply scale-150;

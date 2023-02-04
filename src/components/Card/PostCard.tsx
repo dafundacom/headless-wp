@@ -39,32 +39,32 @@ export const PostCard = React.forwardRef<HTMLDivElement, PostCardProps>(
         ref={ref}
         {...rest}
       >
-        <div className="relative flex flex-row">
+        <div className="relative w-full justify-between flex flex-row">
           <NextLink
             href={slug}
             shallow={true}
-            className="order-2 md:order-1 md:mr-3 w-[125px] min-w-[125px] min-h-[90px] h-[90px] md:!w-[220px] md:!min-w-[220px] md:!min-h-[158px] md:!h-[158px]"
+            className="order-2 md:order-1 md:mr-[30px] "
           >
             <NextImage
               priority={true}
               height={250}
               width={350}
-              className="post-card-thumbnail w-full h-full object-cover aspect-video rounded-lg"
+              className="post-card-thumbnail w-[125px] min-w-[125px] min-h-[90px] h-[90px] md:!w-[270px] md:!min-w-[270px] md:!h-[193px] md:!min-h-full object-cover rounded-lg"
               src={src}
               alt={alt}
             />
           </NextLink>
           <div className="order-1 md:order-2 mr-3 md:mr-unset flex flex-col">
-            <NextLink href={slug} shallow={true}>
+            <NextLink href={slug}>
               <Heading
                 as="h3"
-                className="!text-base !lg:text-xl hover:text-primary-400"
+                className="!text-xl !font-bold hover:text-primary-400"
                 lineClamp={3}
               >
                 {title}
               </Heading>
               <div
-                className="hidden md:my-3 md:inline-flex md:text-lg text-gray-500 dark:text-gray-300 text-base md:!line-clamp-2"
+                className="hidden md:my-[10px] md:inline-flex text-gray-500 dark:text-gray-300 text-[15px] md:!line-clamp-2"
                 dangerouslySetInnerHTML={{ __html: excerpt }}
               />
             </NextLink>
@@ -93,7 +93,7 @@ export const PostCard = React.forwardRef<HTMLDivElement, PostCardProps>(
                     </div>
                   </>
                 )}
-                <MdAccessTime className="h-3 w-3 ml-2 text-gray-700 dark:text-gray-200" />
+                <MdAccessTime className="h-3 w-3 md:ml-2 text-gray-700 dark:text-gray-200" />
                 {date && (
                   <time
                     className="pl-0.5 text-xs text-gray-700 dark:text-gray-200"

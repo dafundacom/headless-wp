@@ -43,15 +43,15 @@ export default function Home(props: HomeProps) {
       <HomeLayout>
         <section className="flex w-full flex-col">
           <ListPostFeatured featured={featured} />
-          <div className="mx-auto px-4 w-full md:max-[991px]:max-w-[750px] min-[992px]:max-[1199px]:max-w-[970px] min-[1200px]:max-w-[1170px] flex flex-row">
-            <div className="w-full flex flex-col lg:mr-4">
+          <div className="mx-auto w-full md:max-[991px]:max-w-[750px] min-[992px]:max-[1199px]:max-w-[970px] min-[1200px]:max-w-[1170px] flex flex-row">
+            <div className="w-full flex flex-col px-4 lg:mr-4">
               <InfiniteScroll
                 pageType="home"
                 posts={data?.posts}
                 pageInfo={data?.pageInfo}
               />
             </div>
-            <aside className="w-4/12 hidden lg:block">
+            <aside className="w-4/12 hidden px-4 lg:block">
               <div className="rounded-xl border border-gray-100 dark:border-gray-700 p-4 sticky top-8">
                 <div className="mb-4">
                   <Heading as="h4" className="!text-transparent">
@@ -93,12 +93,7 @@ export default function Home(props: HomeProps) {
   )
 }
 
-export async function getServerSideProps({ res }: any) {
-  res.setHeader(
-    "Cache-Control",
-    "public, s-maxage=120, stale-while-revalidate=600",
-  )
-
+export async function getStaticProps() {
   const queryClient = new QueryClient()
   await queryClient.prefetchQuery(["menus"], () =>
     wpGetMenusByName(env.MENU_PRIMARY),
@@ -108,5 +103,6 @@ export async function getServerSideProps({ res }: any) {
 
   return {
     props: { dehydratedState: dehydrate(queryClient), seo },
+    revalidate: 60,
   }
 }

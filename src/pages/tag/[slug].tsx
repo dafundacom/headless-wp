@@ -84,8 +84,8 @@ export default function Tag(props: TagProps) {
               </NextLink>
             </div>
           </div>
-          <div className="mx-auto px-4 w-full md:max-[991px]:max-w-[750px] min-[992px]:max-[1199px]:max-w-[970px] min-[1200px]:max-w-[1170px] md:mx-auto flex flex-row">
-            <div className="w-full flex flex-col lg:mr-4">
+          <div className="mx-auto w-full md:max-[991px]:max-w-[750px] min-[992px]:max-[1199px]:max-w-[970px] min-[1200px]:max-w-[1170px] md:mx-auto flex flex-row">
+            <div className="w-full flex px-4 flex-col lg:mr-4">
               <InfiniteScroll
                 pageType="tag"
                 posts={getPostsByTagSlug?.data?.posts}
@@ -93,7 +93,7 @@ export default function Tag(props: TagProps) {
                 pageInfo={getPostsByTagSlug?.data?.pageInfo}
               />
             </div>
-            <aside className="w-4/12 hidden lg:block">
+            <aside className="w-4/12 hidden px-4 lg:block">
               <div className="rounded-xl border border-gray-100 dark:border-gray-700 p-4 sticky top-8">
                 <div className="mb-4">
                   <Heading as="h4" className="!text-transparent">

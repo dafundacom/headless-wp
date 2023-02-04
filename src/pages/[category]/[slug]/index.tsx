@@ -3,7 +3,6 @@ import { QueryClient, dehydrate } from "@tanstack/react-query"
 import { useRouter } from "next/router"
 import Head from "next/head"
 import dynamic from "next/dynamic"
-import { withCSR } from "@/utils/with-CSR"
 import { GetServerSideProps } from "next"
 import parse from "html-react-parser"
 const HomeLayout = dynamic(() =>

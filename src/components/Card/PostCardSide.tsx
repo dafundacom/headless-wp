@@ -1,7 +1,6 @@
 import * as React from "react"
 import NextImage from "next/image"
 import NextLink from "next/link"
-
 import { Heading } from "@/ui"
 
 interface PostCardSlideProps {
@@ -23,7 +22,7 @@ export const PostCardSide = React.forwardRef<
         ref={ref}
         {...rest}
       >
-        <div className="relative flex flex-col md:flex-row md:space-x-5 space-y-3 md:space-y-0 max-w-xs md:max-w-3xl">
+        <div className="relative flex flex-col md:flex-row md:space-x-4 space-y-3 md:space-y-0 max-w-xs md:max-w-3xl">
           <div className="relative">
             <NextImage
               priority={true}

@@ -41,8 +41,8 @@ export default function Author(props: AuthorProps) {
     <>
       <Head>{seo.success === true && parse(seo.head)}</Head>
       <HomeLayout>
-        <section className="mx-auto px-4 w-full md:max-[991px]:max-w-[750px] min-[992px]:max-[1199px]:max-w-[970px] min-[1200px]:max-w-[1170px] flex flex-row lg:px-4">
-          <div className="w-full flex flex-col lg:mr-4">
+        <section className="mx-auto w-full md:max-[991px]:max-w-[750px] min-[992px]:max-[1199px]:max-w-[970px] min-[1200px]:max-w-[1170px] flex flex-row lg:px-4">
+          <div className="w-full px-4 flex flex-col lg:mr-4">
             {getPostsByAuthorSlug?.isFetching == false && (
               <InfiniteScroll
                 pageType="author"
@@ -53,7 +53,7 @@ export default function Author(props: AuthorProps) {
             )}
           </div>
 
-          <aside className="w-4/12 hidden lg:block">
+          <aside className="w-4/12 hidden px-4 lg:block">
             <div className="rounded-xl border border-gray-100 dark:border-gray-700 p-4 sticky top-8">
               <div className="mb-4">
                 <Heading as="h4" className="!text-transparent">

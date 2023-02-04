@@ -16,7 +16,6 @@ import {
 } from "@/lib/wp-posts"
 import { useRouter } from "next/router"
 import { QueryClient, dehydrate } from "@tanstack/react-query"
-import { withCSR } from "@/utils/with-CSR"
 const InfiniteScroll = dynamic(() =>
   import("@/components/InfiniteScroll").then((mod) => mod.InfiniteScroll),
 )
@@ -66,7 +65,7 @@ export default function Category(props: CategoryProps) {
       <HomeLayout>
         {isFetching === false && (
           <section className="flex w-full flex-col">
-            <div className="flex py-10 mb-10 flex-col bg-gradient-to-r from-[#1e3799] to-[#0984e3] relative">
+            <div className="flex py-10 mb-10 flex-col bg-gradient-to-r !from-[#1e3799] !to-[#0984e3] relative">
               <div className="absolute top-1">
                 <nav className="ml-2 flex" aria-label="Breadcrumb">
                   <ol className="inline-flex items-center text-white">
@@ -111,8 +110,8 @@ export default function Category(props: CategoryProps) {
                   })}
               </div>
             </div>
-            <div className="mx-auto px-4 w-full md:max-[991px]:max-w-[750px] min-[992px]:max-[1199px]:max-w-[970px] min-[1200px]:max-w-[1170px] flex flex-row lg:mx-auto lg:px-4">
-              <div className="w-full flex flex-col lg:mr-4">
+            <div className="mx-auto w-full md:max-[991px]:max-w-[750px] min-[992px]:max-[1199px]:max-w-[970px] min-[1200px]:max-w-[1170px] flex flex-row lg:mx-auto lg:px-4">
+              <div className="w-full px-4 flex flex-col lg:mr-4">
                 {getPostsByCategorySlug?.isFetching === false && (
                   <InfiniteScroll
                     pageType="category"
@@ -122,7 +121,7 @@ export default function Category(props: CategoryProps) {
                   />
                 )}
               </div>
-              <aside className="w-4/12 hidden lg:block">
+              <aside className="w-4/12 px-4 hidden lg:block">
                 <div className="rounded-xl border border-gray-100 dark:border-gray-700 p-4 sticky top-8">
                   <div className="mb-4">
                     <Heading as="h4" className="!text-transparent">
